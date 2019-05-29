@@ -109,8 +109,8 @@ var x, y
 */
 
 /*****************************
-* CODING CHALLENGE 1
-*/
+ * CODING CHALLENGE 1
+ */
 
 /*
 Mark and John are trying to compare their BMI (Body Mass Index), which is calculated using the formula: BMI = mass / height^2 = mass / (height * height). (mass in kg and height in meter).
@@ -139,8 +139,8 @@ console.log("Is Mark's BMI higher than John's? " + compare)
 */
 
 /*****************************
-* 5. If/else statements
-*/
+ * 5. If/else statements
+ */
 
 /*
 var firstName = 'John'
@@ -179,8 +179,8 @@ if (markBMI > johnBMI) {
 */
 
 /*****************************
-* 6. Boolean Logic
-*/
+ * 6. Boolean Logic
+ */
 
 /*
 var firstName = 'John'
@@ -198,8 +198,8 @@ if (age < 13) {
 */
 
 /*****************************
-* 7. The Ternary Operator and Switch Statements
-*/
+ * 7. The Ternary Operator and Switch Statements
+ */
 
 /*
 var firstName = 'John'
@@ -241,8 +241,8 @@ switch (true) {
 */
 
 /*****************************
-* 8. Truthy and Falsy values and equality operators
-*/
+ * 8. Truthy and Falsy values and equality operators
+ */
 
 /*
 var height = 23
@@ -255,8 +255,8 @@ if (height || hieght === 0  ) {
 */
 
 /*****************************
-* CODING CHALLENGE 2
-*/
+ * CODING CHALLENGE 2
+ */
 
 /*
 John and Mike both play basketball in different teams. In the latest 3 games, John's team scored 89, 120 and 103 points, while Mike's team scored 116, 94 and 123 points.
@@ -306,8 +306,8 @@ if (johnTeamAverageScore > mikeTeamAverageScore && johnTeamAverageScore > maryTe
 */
 
 /*****************************
-* FUNCTIONS
-*/
+ * FUNCTIONS
+ */
 
 /*
 function calculateAge(birthYear) {
@@ -336,8 +336,8 @@ yearsUntilRetirement(1948, 'Mike')
 */
 
 /*****************************
-* Function Statements and Expressions
-*/
+ * Function Statements and Expressions
+ */
 
 /*
 // Function declaration
@@ -362,8 +362,8 @@ console.log(whatDoYouDo('designer', 'Jane'))
 */
 
 /*****************************
-* Arrays
-*/
+ * Arrays
+ */
 
 /*
 // Initialize new array
@@ -397,8 +397,8 @@ console.log(isDesigner)
 */
 
 /*****************************
-* Coding Challenge 3
-*/
+ * Coding Challenge 3
+ */
 
 /*
 John and his family went on a holiday and went to 3 different restaurants. The bills were $124, $48 and $268.
@@ -444,10 +444,9 @@ allPaid.push(tipCaculator(bill3) + bill3)
 console.log(allPaid)
 */
 
-
 /*****************************
-* Objects and properties
-*/
+ * Objects and properties
+ */
 
 /*
 // Object literal
@@ -479,8 +478,8 @@ console.log(jane)
 */
 
 /*****************************
-* Objects and methods
-*/
+ * Objects and methods
+ */
 
 /*
 var john = {
@@ -500,8 +499,8 @@ console.log(john)
 */
 
 /*****************************
-* Coding Challenge 4
-*/
+ * Coding Challenge 4
+ */
 
 /*
 Let's remember the first coding challenge where Mark and John compared their BMIs. Let's now implement the same functionality with objects and methods.
@@ -545,8 +544,8 @@ if (mark.calcBMI() > john.calcBMI()) {
 */
 
 /*****************************
-* Loop and Iteration
-*/
+ * Loop and Iteration
+ */
 
 /*
 // For loop
@@ -592,8 +591,8 @@ for (var i = john.length - 1; i >= 0; i--) {
 */
 
 /*****************************
-* CODING CHALLENGE 5
-*/
+ * CODING CHALLENGE 5
+ */
 
 /*
 Remember the tip calculator challenge? Let's create a more advanced version using everything we learned!
@@ -620,24 +619,78 @@ GOOD LUCK 😀
 */
 
 var johnBills = {
-    bills: [124, 48, 268, 180, 42],
-    tips: [],
-    finalPaid : [],
-    calcTip: function() {
-        for (i = 0; i < this.bills.length; i++) {
-            if (this.bills[i] < 50) {
-                this.tips.push(this.bills[i] * 0.2)
-                this.finalPaid.push(this.bills[i] + this.bills[i] * 0.2)
-            } else if (this.bills[i] <= 200) {
-                this.tips.push(this.bills[i] * 0.15)
-                this.finalPaid.push(this.bills[i] + this.bills[i] * 0.15)
-            } else {
-                this.tips.push(this.bills[i] * 0.1)
-                this.finalPaid.push(this.bills[i] + this.bills[i] * 0.1)
-            }
-        }
-    }
+	fulllName: 'John Smith',
+	bills: [124, 48, 268, 180, 42],
+	calcTip: function() {
+		var percentage
+		this.tips = []
+		this.finalPaid = []
+		for (var i = 0; i < this.bills.length; i++) {
+			if (this.bills[i] < 50) {
+				percentage = 0.2
+			} else if (this.bills[i] <= 200) {
+				percentage = 0.15
+			} else {
+				percentage = 0.1
+			}
+			this.tips[i] = this.bills[i] * percentage
+			this.finalPaid[i] = this.bills[i] + this.bills[i] * percentage
+		}
+	}
 }
 
 johnBills.calcTip()
 console.log(johnBills)
+
+var markBills = {
+	fullName: 'Mark Twain',
+	bills: [77, 375, 110, 45],
+	calcTip: function() {
+		var percentage
+		this.tips = []
+		this.finalPaid = []
+		for (var i = 0; i < this.bills.length; i++) {
+			if (this.bills[i] < 100) {
+				percentage = 0.2
+			} else if (this.bills[i] <= 300) {
+				percentage = 0.1
+			} else {
+				percentage = 0.25
+			}
+			this.tips[i] = this.bills[i] * percentage
+			this.finalPaid[i] = this.bills[i] + this.bills[i] * percentage
+		}
+	}
+}
+
+markBills.calcTip()
+console.log(johnBills)
+
+var calcAverageTips = function(tipsArr) {
+	var sum = 0
+	for (var i = 0; i < tipsArr.length; i++) {
+		sum += tipsArr[i]
+	}
+	return sum / tipsArr.length
+}
+
+console.log(calcAverageTips(johnBills.tips))
+console.log(calcAverageTips(markBills.tips))
+johnBills.average = calcAverageTips(johnBills.tips)
+markBills.average = calcAverageTips(markBills.tips)
+
+if (johnBills.average > markBills.average) {
+	console.log(
+		johnBills.fulllName +
+			' paid the highest tips on average with ' +
+			johnBills.average
+	)
+} else if (johnBills.average < markBills.average) {
+	console.log(
+		markBills.fullName +
+			' paid the highest tips on average with ' +
+			markBills.average
+	)
+} else {
+	console.log('Same tips')
+}
